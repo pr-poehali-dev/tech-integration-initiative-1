@@ -16,9 +16,9 @@ type PricingCardProps = {
 function PricingCard({
   titleBadge,
   priceLabel,
-  priceSuffix = "/мес",
+  priceSuffix = "/билет",
   features,
-  cta = "Подписаться",
+  cta = "Купить",
   className,
 }: PricingCardProps) {
   return (
@@ -91,33 +91,33 @@ export function BentoPricing() {
         </div>
         <div className="flex items-center gap-3 p-3">
           <Badge variant="secondary" className="bg-white/10 text-white border-white/20 font-open-sans-custom text-xs">
-            ПРЕМИУМ
+            VIP-ЛОЖА
           </Badge>
           <Badge
             variant="outline"
             className="hidden lg:flex bg-white/5 text-white border-white/20 font-open-sans-custom text-xs"
           >
-            <SparklesIcon className="me-1 size-3" /> Популярный
+            <SparklesIcon className="me-1 size-3" /> Топ-матчи
           </Badge>
           <div className="ml-auto">
             <Button size="sm" className="bg-white text-black hover:bg-gray-100 font-open-sans-custom text-xs">
-              Подписаться
+              Забронировать
             </Button>
           </div>
         </div>
         <div className="flex flex-col p-3 lg:flex-row">
           <div className="pb-2 lg:w-[30%]">
             <span className="font-mono text-3xl font-semibold tracking-tight text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_60%)]">
-              2 000 ₽
+              от 89 000 ₽
             </span>
-            <span className="text-gray-300 text-xs font-open-sans-custom">/мес</span>
+            <span className="text-gray-300 text-xs font-open-sans-custom">/билет</span>
           </div>
           <ul className="text-gray-300 grid gap-2 text-xs lg:w-[70%] font-open-sans-custom">
             {[
-              "2 000 ₽ кредитов включено ежемесячно",
-              "Докупайте кредиты сверх месячного лимита",
-              "5x увеличенный лимит вложений",
-              "Импорт дизайнов из популярных инструментов",
+              "Лучшие места по центру поля",
+              "Премиум-кейтеринг и бар включены",
+              "Отдельный вход и парковка",
+              "Встреча с игроками после матча (по доступности)",
             ].map((f, i) => (
               <li key={i} className="flex items-center gap-2">
                 <Check className="w-[1.05rem] h-[1.05rem] text-white flex-shrink-0" strokeWidth={3} />
@@ -129,50 +129,48 @@ export function BentoPricing() {
       </div>
 
       <PricingCard
-        titleBadge="СТАРТ"
-        priceLabel="0 ₽"
+        titleBadge="ВЕРХНИЙ ЯРУС"
+        priceLabel="от 8 900 ₽"
         features={[
-          "500 ₽ кредитов включено ежемесячно",
-          "Деплой приложений в облако",
-          "Визуальное редактирование",
-          "Синхронизация с Git",
+          "Места на верхних трибунах",
+          "Полный обзор поля",
+          "Доступ ко всем зонам стадиона",
+          "Электронный билет на email",
         ]}
         className="lg:col-span-3"
-        cta="Начать"
+        cta="Купить"
       />
 
       <PricingCard
-        titleBadge="КОМАНДА"
-        priceLabel="3 000 ₽"
-        priceSuffix="/чел/мес"
+        titleBadge="ЦЕНТРАЛЬНЫЙ СЕКТОР"
+        priceLabel="от 18 500 ₽"
         features={[
-          "3 000 ₽ кредитов на участника ежемесячно",
-          "Единый биллинг и управление командой",
-          "Общие чаты и совместная работа",
+          "Удобные места ближе к полю",
+          "Лучшая видимость игры",
+          "Быстрый вход по приоритетной полосе",
         ]}
         className="lg:col-span-4"
       />
 
       <PricingCard
-        titleBadge="БИЗНЕС"
-        priceLabel="10 000 ₽"
-        priceSuffix="/чел/мес"
-        features={["3 000 ₽ кредитов на участника ежемесячно", "Отключение обучения по умолчанию", "Полный доступ к API"]}
+        titleBadge="ПРЕМИУМ-ТРИБУНА"
+        priceLabel="от 35 000 ₽"
+        features={["Места в первых рядах у поля", "Закрытая лаунж-зона", "Напитки и снеки в подарок"]}
         className="lg:col-span-4"
       />
 
       <PricingCard
-        titleBadge="КОРПОРАЦИЯ"
+        titleBadge="ТУР НА МАТЧ"
         priceLabel="По запросу"
         priceSuffix=""
         features={[
-          "Отключение обучения по умолчанию",
-          "SAML SSO",
-          "Приоритетный доступ",
-          "Персональная поддержка",
+          "Билет на матч АПЛ под ключ",
+          "Перелёт и отель в Англии",
+          "Трансфер до стадиона",
+          "Сопровождение русскоговорящего гида",
         ]}
         className="lg:col-span-8"
-        cta="Связаться"
+        cta="Оставить заявку"
       />
     </div>
   )
